@@ -28,8 +28,8 @@ public class ListLab {
         System.out.println("1. Creating a new to-do list...");
         
         // TODO: Create a list of String call it todoList, use ArrayList class as the implementation
+        List<String> todoList = new ArrayList<>();
 
-        
         System.out.println("   Empty list created successfully!");
         System.out.println("   List size: " + todoList.size());
         System.out.println("   Is empty: " + todoList.isEmpty());
@@ -39,10 +39,14 @@ public class ListLab {
         System.out.println("2. Adding tasks to our to-do list...");
         
         // TODO: Uncomment the lines below to add tasks and add 4 more tasks to our to do list
-        // todoList.add("Buy groceries");
-        // todoList.add("Walk the dog");
-        // todoList.add("Study for exam");
-        // todoList.add("Call mom");
+        todoList.add("Buy groceries");
+        todoList.add("Walk the dog");
+        todoList.add("Study for exam");
+        todoList.add("Call mom");
+        todoList.add("Do laundry");
+        todoList.add("Clean the room");
+        todoList.add("Water the plants");
+        todoList.add("Finish homework");
         
         System.out.println("   Tasks added successfully!");
         System.out.println("   List size: " + todoList.size());
@@ -52,12 +56,14 @@ public class ListLab {
         // ========== SECTION 3: Accessing Specific Tasks ==========
         System.out.println("3. Accessing specific tasks...");
         
-        /// TODO: 
+        /// TODO:
         //accessing the first element use the method get(int index) or getFirst() save it in the variable firstTask
-    
+        String firstTask = todoList.get(0);
+
         //accessing the last element use the method get(int index) or getLast() save it in the variable lastTask
-        
-        
+        String lastTask = todoList.get(todoList.size() - 1);
+
+
         System.out.println("   First task: " + firstTask);
         System.out.println("   Last task: " + lastTask);
         System.out.println("   Task at index 2: " + todoList.get(2));
@@ -67,8 +73,9 @@ public class ListLab {
         System.out.println("4. Inserting a priority task at the beginning...");
         
         // TODO: insert task called "URGENT: Submit assignment" at index 0 use method add(int index, String s)
-  
-        
+        todoList.add(0, "URGENT: Submit assignment");
+
+
         System.out.println("   Priority task inserted!");
         System.out.println("   Updated list: " + todoList);
         System.out.println("   New list size: " + todoList.size());
@@ -80,9 +87,10 @@ public class ListLab {
         String searchTask = "Walk the dog";
         
         // TODO:  search if the list contains searchTask, store that boolean value into a variable called containsTask
+        boolean containsTask = todoList.contains(searchTask);
 
         // TODO: Uncomment the line below to find the index of the task we're searching
-        // int taskIndex = todoList.indexOf(searchTask);
+        int taskIndex = todoList.indexOf(searchTask);
         
         System.out.println("   Does list contain '" + searchTask + "'? " + containsTask);
         System.out.println("   Index of '" + searchTask + "': " + taskIndex);
@@ -93,14 +101,16 @@ public class ListLab {
         
         System.out.println("   Before completing tasks: " + todoList);
         
-        // TODO: 
-        // Remove by index (completing the first task) using 
+        // TODO:
+        // Remove by index (completing the first task) using
         // the remove(int index) method, save it in a String  variable --> completedTask
-        
+        String completedTask = todoList.remove(0);
+
         // TODO: Remove by value (completing "Walk the dog") by using the remove(String value) method
         // Save it in a boolean variable called removed
-        
-        
+        boolean removed = todoList.remove("Walk the dog");
+
+
         //NOTE: remove(int index) returns a string while remove(String value) returns a bool value
         
         System.out.println("   Completed task: " + completedTask);
@@ -113,8 +123,11 @@ public class ListLab {
         System.out.println("7. Displaying all remaining tasks...");
         
         // TODO: Use a for each loop to print all the remaining tasks
+        for (String task : todoList) {
+            System.out.println("   - " + task);
+        }
 
-        
+
         System.out.println();
         
         // ========== SECTION 8: List Operations Summary ==========
